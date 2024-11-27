@@ -21,37 +21,36 @@ function UserTable() {
   }, []);
 
   const handleAddOrEditUser = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent form submission default behavior
+  
     if (!newUser.name || !newUser.email || !newUser.role) {
       setError("All fields are required");
       return;
     }
-
-    // Editing an existing user
-    if (currentUser) {
-      try {
+  
+    try {
+      if (currentUser) {
+        // Editing an existing user
         const updatedUser = await updateUser(currentUser.id, newUser);
         setUsers((prevUsers) =>
           prevUsers.map((user) =>
             user.id === currentUser.id ? updatedUser : user
           )
         );
-        resetForm();
-      } catch (err) {
-        setError("Failed to update user");
-      }
-    } else {
-      // Adding a new user
-      try {
-        const addedUser = await addUser({ ...newUser, email: newUser.email.toLowerCase() });
+      } else {
+        // Adding a new user
+        const addedUser = await addUser({
+          ...newUser,
+          email: newUser.email.toLowerCase(),
+        });
         setUsers((prevUsers) => [...prevUsers, addedUser]);
-        resetForm();
-      } catch (err) {
-        setError("Failed to add user");
       }
+      resetForm();
+    } catch (err) {
+      setError(currentUser ? "Failed to update user" : "Failed to add user");
     }
   };
-
+  
   const handleDeleteUser = async (id) => {
     try {
       await deleteUser(id);
