@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# User Management Role-Based Access Control (RBAC) System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+This project is a User Management System built with React.js, providing essential Role-Based Access Control (RBAC) features. It allows administrators to manage users and roles with the ability to add, edit, and delete users, assign roles, and ensure data persistence using localStorage.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+  
+   - **Add Users**: Create new user profiles with details like name, email, role, and status (active/inactive). Ensures email validation before saving.
+   - **Edit Users**: Modify user details by pre-filling forms with existing data for easy updates.
+   - **Delete Users**: Permanently remove users from the system with a single click.
+   - **Role Management**: Define roles that can be assigned to users, enabling control over user permissions and access.
+   - **Data Persistence**: User and role data is stored locally using the browser's localStorage, maintaining data across page reloads.
+   - **Responsive Design**: The interface is optimized for both desktop and mobile devices.
+ 
+   - 
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   **Frontend Framework**: React.js
+    **Styling**: Tailwind CSS for responsive and aesthetic design.
+    **State Management**: Local storage for maintaining application state across sessions.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+1. **Clone the repository:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   https://github.com/mahalak04/VRV-Task.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install dependencies:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   - (Assuming you have Node.js and npm installed)
+   
+   - Run the below command to install all the required dependencies.
+   
+    npm install
 
-### `npm run eject`
+2. **Start the application:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   - Run the below command to start the project locally.
+   
+    npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Open your browser and navigate to:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+       http://localhost:3000
 
-## Learn More
+**How to Use**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  Manage Roles:
+        Create roles before adding users.
+        Assign roles during user creation or editing.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  Add Users:
+        Click the "Add User" button.
+        Fill out the form with the user's name, email, role, and status.
+        Submit the form to save the user.
 
-### Code Splitting
+  Edit Users:
+        Locate the user in the table and click "Edit".
+        Update details as needed and save changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   Delete Users:
+        Click the "Delete" button next to the user you want to remove.
 
-### Analyzing the Bundle Size
+   Data Persistence:
+        All user and role data is automatically saved to localStorage.
+        Changes persist across page refreshes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Future Enhancements**
 
-### Making a Progressive Web App
+   Add authentication to restrict access to role management features.
+    Integrate with a backend service for robust data storage.
+    Implement a dashboard for advanced analytics and user insights.
+ 
+## Interacting with the Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Initally create a role that can eventually be assigned to any User.
+- Adding Users: Click on the designated "Add User" button to add a new user.
+- Editing Users: Locate the "Edit" button next to a user's record in the table and click it to modify details, including their role.
+- Deleting Users: Click the corresponding "Delete" button to permanently remove a user.
+- Role Management: When adding or editing a user, you can assign a specific role. This helps to control the access and permissions for each user.
+- LocalStorage Utilization: The application leverages the browser's localStorage for user data persistence. This entails:
+    - Saving user and role data modifications (addition, editing, deletion) locally to your browser.
+    - Maintaining user and role data even upon page refreshes, as it's retrieved from localStorage upon subsequent loads.
